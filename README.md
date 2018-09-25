@@ -1,26 +1,16 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+## *Projetos de estudos utilizando a plataforma Alura*
 
-## How to use this template
+5-) Projeto Aluracar: Referente ao (Curso Ionic 3 parte 1: aplicações híbridas mobile ainda mais poderosas) - *Finalizado*
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+     ° Consumindo a API do cliente
+     ° Lidando com ações do usuário no aplicativo
+     ° Adicionando acessórios ao veículo selecionado
+     ° Criando a página de agendamentos
+     ° Realizando os agendamentos
+     ° Persistindo dados localmente
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+## *Fluxo do App*
+<img src="https://github.com/TiagoeSouza/Aluracar-Ionic-3/blob/master/Aluracar%20-%20Gif/gif-Aluracar-Mod-1.gif" />
 
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
-
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+## *Apresentação das informações salvas, no Indexed DB*
+<img src="https://github.com/TiagoeSouza/Aluracar-Ionic-3/blob/master/Aluracar%20-%20Gif/gif-Aluracar-Mod-2.gif" />
