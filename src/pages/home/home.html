@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Alura - Car
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- The world is your oyster.
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p> -->
+  <!-- Olá Ionic ! -->
+  <ion-list>
+    <!-- <ion-item> Brasília Amarela</ion-item> -->
+    <ion-item *ngFor="let carro of carros" (click)="selecionaCarro(carro)">
+      <h2>{{carro.nome}}</h2>
+      <p>R$: {{carro.preco}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

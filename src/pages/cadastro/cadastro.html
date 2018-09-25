@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>{{carro.nome}}</h2>
+  <p>R$: {{precoTotal}}</p>
+
+  <form (ngSubmit)="agenda()" #formulario="ngForm">
+    <ion-item>
+      <ion-label stacked>Nome: </ion-label>
+      <ion-input [(ngModel)]="nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Endereço: </ion-label>
+      <ion-input [(ngModel)]="endereco" name="endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Email: </ion-label>
+      <ion-input [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Data: </ion-label>
+      <ion-datetime [(ngModel)]="data" name="data" displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+  </form>
+
+  <ion-fab top right edge>
+    <button ion-fab mini (click)="formulario.ngSubmit.emit()">
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
