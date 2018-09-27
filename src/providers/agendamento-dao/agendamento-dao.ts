@@ -27,8 +27,18 @@ export class AgendamentoDaoProvider {
   ehDuplicado(agendamento: Agendamento) {
     let chave = this._geraChave(agendamento);
     let promise = this._storage.get(chave).then(data => data ? true : false);
-  
+
     return Observable.fromPromise(promise);
   }
 
+
+  listaTodos() {
+    let agendamentos: Agendamento[] = [];
+
+    let promise = this._storage.forEach((agendamento: Agendamento) => {
+      agendamentos.push(agendamento);
+    }).then(() => agendamentos);
+
+    return Observable.fromPromise(promise);
+  }
 }

@@ -75,7 +75,7 @@ export class CadastroPage {
 
         let mensagem = '';
 
-        this._agendamentosService.agenda(agendamento)
+        // this._agendamentosService.agenda(agendamento)
 
         this._agendamentoDao.ehDuplicado(agendamento)
             .mergeMap(ehDuplicado => {

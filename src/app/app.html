@@ -1,1 +1,25 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-split-pane>
+
+    <ion-menu [content]="content">
+        <ion-content>
+            <ion-item id="cabecalho-menu" class="cabecalho-menu">
+                <div>
+                    <ion-avatar item-start>
+                        <img src="assets/img/avatar-profile.jpg">
+                    </ion-avatar>
+                </div>
+                <h2>Tiago Esteves de Souza</h2>
+                <p>tiago_e_souza@hotmail.com</p>
+            </ion-item>
+<!-- <ion-item-divider></ion-item-divider> -->
+
+            <ion-list>
+                <button ion-item menuClose *ngFor="let pagina of paginas" (click)="irParaPagina(pagina.componente)">
+                    <ion-icon [name]="pagina.icone" item-left></ion-icon>
+                    {{pagina.titulo}}
+                </button>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+    <ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+</ion-split-pane>
