@@ -1,0 +1,36 @@
+<ion-content scroll="false" class="scroll-content">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Alura - Car
+    </div>
+  </div>
+  <div padding>
+    <form (ngSubmit)="efetuaLogin()">
+
+      <ion-item>
+        <ion-label stacked>
+          <ion-icon name="mail" item-start></ion-icon> Email
+        </ion-label>
+        <ion-input placeholder="xxxx.yyyyy@abc.com" [(ngModel)]="email" name="email" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>
+          <ion-icon name="key" item-start></ion-icon>Senha
+        </ion-label>
+        <ion-input placeholder="*******" [(ngModel)]="senha" name="senha" type="password"></ion-input>
+      </ion-item>
+
+      <button ion-button block type="submit" class="login" icon-start color="primary">
+        <ion-icon item-left name="arrow-round-forward"></ion-icon>
+        <ion-label>
+          Entrar
+        </ion-label>
+      </button>
+
+    </form>
+
+  </div>
+</ion-content>

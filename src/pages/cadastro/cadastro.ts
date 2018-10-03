@@ -5,7 +5,7 @@ import { AgendamentosServiceProvider } from './../../providers/agendamentos-serv
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Alert, AlertController } from 'ionic-angular';
 import { Carro } from '../../modelos/carro';
-
+import 'rxjs/add/operator/mergeMap';
 
 @IonicPage()
 @Component({

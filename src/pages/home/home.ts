@@ -50,4 +50,13 @@ export class HomePage implements NavLifecycles {
       carroSelecionado: carro,
     });
   }
+
+
+  doRefresh(refresher) {
+    this.ionViewDidLoad();
+
+    setTimeout(() => {
+      refresher.complete();
+    }, 1000); // API LOCAL ESTA RAPIDA, VOU SETAR UM "DELAY"
+  }
 }

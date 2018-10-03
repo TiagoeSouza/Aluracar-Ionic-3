@@ -26,10 +26,10 @@ module.exports = app => {
 
     const usuario = {
         "id": 1,
-        "nome": "João da Silva",
-        "dataNascimento": "30/01/1990",
-        "telefone": "(21) 9988-7788",
-        "email": "joao@alura.com.br",
+        "nome": "Tiago Esteves de Souza",
+        "dataNascimento": "04/08/1993",
+        "telefone": "(00) 90000-0000",
+        "email": "tiago_e_souza@hotmail.com",
         "senha": "alura123"
     };
 

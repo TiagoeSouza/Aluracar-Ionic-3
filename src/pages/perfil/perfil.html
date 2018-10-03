@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item no-lines>
+    <div class="avatar-wrapper">
+      <ion-avatar>
+        <img src="assets/img/avatar-padrao.jpg">
+      </ion-avatar>
+      <button ion-button icon-only round class="btn-tirar-foto">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </div>
+  </ion-item>
+  <ion-card>
+    <ion-item>
+      <ion-icon name="contact" item-left></ion-icon>
+      {{usuarioLogado.nome}}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="calendar" item-left></ion-icon>
+      <p>{{usuarioLogado.dataNascimento}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="at" item-left></ion-icon>
+      <p>{{usuarioLogado.email}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call" item-left></ion-icon>
+      <p>{{usuarioLogado.telefone}}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>
+
+<!-- 
+<ion-card>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar-profile.jpg">
+      </ion-avatar>
+      <h2>Marty McFly</h2>
+      <p>November 5, 1955</p>
+    </ion-item>
+  
+    <img src="assets/img/material-design-background.jpg">
+  
+    <ion-card-content>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  
+  </ion-card> -->
