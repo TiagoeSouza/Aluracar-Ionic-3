@@ -40,7 +40,7 @@
 
   <!-- <button ion-button block>Avançar</button> -->
   <ion-fab top right edge>
-    <button ion-fab mini (click)="avancaCadastro()">
+    <button ion-fab (click)="avancaCadastro()">
       <ion-icon name="arrow-dropright"></ion-icon>
     </button>
   </ion-fab>
@@ -48,11 +48,11 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-title>
-      <ion-item-divider color="light">
-        <span item-right>TOTAL R$: {{precoTotal}} </span>
-      </ion-item-divider>
-    </ion-title>
-  </ion-toolbar>
+  <!-- <ion-toolbar color="light"> -->
+  <!-- <ion-title> -->
+  <ion-item-divider color="light">
+    <span item-right>TOTAL R$: {{precoTotal}} </span>
+  </ion-item-divider>
+  <!-- </ion-title> -->
+  <!-- </ion-toolbar> -->
 </ion-footer>

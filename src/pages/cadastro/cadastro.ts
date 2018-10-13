@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Alert, AlertController } from 'ionic-angular';
 import { Carro } from '../../modelos/carro';
 import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/finally';
+import { Vibration } from '@ionic-native/vibration';
+import { DatePicker } from '@ionic-native/date-picker';
 
 @IonicPage()
 @Component({
@@ -28,9 +31,25 @@ export class CadastroPage {
         public navParams: NavParams,
         private _alertCtrl: AlertController,
         private _agendamentosService: AgendamentosServiceProvider,
-        private _agendamentoDao: AgendamentoDaoProvider) {
+        private _agendamentoDao: AgendamentoDaoProvider,
+        private _vibration: Vibration,
+        private _datepicker: DatePicker) {
         this.carro = this.navParams.get("carroSelecionado");
         this.precoTotal = this.navParams.get("precoTotal");
+    }
+
+    selecionaData() {
+        this._datepicker.show({
+            date: new Date(),
+            mode: 'date',
+            androidTheme: 5
+        }).then((data) => {
+            this.data = data.toISOString();
+        }).catch((error) => {
+            // Quando clicado no botão cancelar do calendario, estava ocorrendo error in promise
+            // Sendo assim a unica forma até o momento que encontrei foi informar no catch um return;
+            return;
+        });
     }
 
     agenda() {
@@ -40,6 +59,9 @@ export class CadastroPage {
         // console.log(this.data);
 
         if (!this.nome || !this.endereco || !this.email) {
+            let pattern = [500, 200, 1000];
+            this._vibration.vibrate(pattern);
+
             this._alertCtrl.create({
                 title: "Preenchimento obrigatório",
                 subTitle: "Preencha todos os campos!",
@@ -47,6 +69,7 @@ export class CadastroPage {
                     { text: "Ok" }
                 ]
             }).present();
+            
             return;
         }
 
@@ -58,7 +81,8 @@ export class CadastroPage {
             precoTotal: this.precoTotal,
             confirmado: false,
             enviado: false,
-            data: this.data
+            data: this.data,
+            visualizado: false
         };
 
         this._alerta = this._alertCtrl.create({
@@ -100,6 +124,4 @@ export class CadastroPage {
                 (error: Error) => mensagem = error.message
             );
     }
-
-
 }

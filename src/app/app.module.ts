@@ -1,3 +1,7 @@
+import { Vibration } from '@ionic-native/vibration';
+import { DatePicker } from '@ionic-native/date-picker';
+import { Camera } from '@ionic-native/camera';
+import { OneSignal } from '@ionic-native/onesignal';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -20,6 +24,7 @@ import 'rxjs/add/operator/catch';
 import { AgendamentoDaoProvider } from '../providers/agendamento-dao/agendamento-dao';
 import { LoginPage } from '../pages/login/login';
 import { UsuariosServiceProvider } from '../providers/usuarios-service/usuarios-service';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,12 @@ import { UsuariosServiceProvider } from '../providers/usuarios-service/usuarios-
     CarrosServiceProvider,
     AgendamentosServiceProvider,
     AgendamentoDaoProvider,
-    UsuariosServiceProvider
+    UsuariosServiceProvider,
+    ApiServiceProvider,
+    Vibration,
+    DatePicker,
+    Camera,
+    OneSignal
   ]
 })
 export class AppModule { }

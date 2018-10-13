@@ -7,7 +7,7 @@
     </div>
   </div>
   <div padding>
-    <form (ngSubmit)="efetuaLogin()">
+    <form (ngSubmit)="efetuaLogin()" #formlogin="ngForm">
 
       <ion-item>
         <ion-label stacked>
@@ -23,14 +23,19 @@
         <ion-input placeholder="*******" [(ngModel)]="senha" name="senha" type="password"></ion-input>
       </ion-item>
 
-      <button ion-button block type="submit" class="login" icon-start color="primary">
-        <ion-icon item-left name="arrow-round-forward"></ion-icon>
+      <button ion-button block round large type="submit" class="login">
         <ion-label>
           Entrar
         </ion-label>
+        <ion-icon name="arrow-round-forward"></ion-icon>
       </button>
-
     </form>
-
   </div>
 </ion-content>
+
+<!-- <ion-footer>
+  <button ion-button block large (click)="formlogin.ngSubmit.emit()" class="login" color="secondary">    
+    Entrar    
+    <ion-icon name="arrow-round-forward"></ion-icon>
+  </button>
+</ion-footer> -->

@@ -14,24 +14,24 @@
   <form (ngSubmit)="agenda()" #formulario="ngForm">
     <ion-item>
       <ion-label stacked>Nome: </ion-label>
-      <ion-input [(ngModel)]="nome" name="nome"></ion-input>
+      <ion-input [(ngModel)]="nome" name="nome" spellcheck="true" autocomplete="true" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Endereço: </ion-label>
-      <ion-input [(ngModel)]="endereco" name="endereco"></ion-input>
+      <ion-input [(ngModel)]="endereco" name="endereco" spellcheck="true" autocomplete="true" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Email: </ion-label>
-      <ion-input [(ngModel)]="email" name="email"></ion-input>
+      <ion-input [(ngModel)]="email" name="email" spellcheck="true" autocomplete="true" type="email"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="selecionaData()">
       <ion-label stacked>Data: </ion-label>
-      <ion-datetime [(ngModel)]="data" name="data" displayFormat="DD/MM/YYYY"></ion-datetime>
+      <ion-datetime disabled="true" [(ngModel)]="data" name="data" displayFormat="DD/MM/YYYY"></ion-datetime>
     </ion-item>
   </form>
 
   <ion-fab top right edge>
-    <button ion-fab mini (click)="formulario.ngSubmit.emit()">
+    <button ion-fab (click)="formulario.ngSubmit.emit()">
       <ion-icon name="send"></ion-icon>
     </button>
   </ion-fab>

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
 import { Agendamento } from '../../modelos/agendamento';
 
+
 @IonicPage()
 @Component({
   selector: 'page-lista-agendamentos',
@@ -18,13 +19,28 @@ export class ListaAgendamentosPage {
     private _alertCtrl: AlertController,
     private _agendamentosService: AgendamentosServiceProvider) {
   }
-
+  // executado quando a pagina é carregada
   ionViewDidLoad() {
     this._agendamentoDao.listaTodos()
       .subscribe(
         (agendamentos: Agendamento[]) => {
           this.agendamentos = agendamentos
         });
+  }
+
+  //executado quando pagina foi acionada
+  ionViewDidEnter() {
+    setTimeout(() => this.atualizaAgendamentos(), 5000);
+  }
+
+  atualizaAgendamentos() {
+    this.agendamentos.filter((agendamento: Agendamento) => agendamento.confirmado)
+      .forEach((agendamento: Agendamento) => {
+
+        agendamento.visualizado = true;
+        this._agendamentoDao.salva(agendamento);
+
+      });
   }
 
   reenvia(agendamento: Agendamento) {

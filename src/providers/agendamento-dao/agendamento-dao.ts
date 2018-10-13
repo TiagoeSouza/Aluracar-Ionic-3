@@ -14,12 +14,17 @@ export class AgendamentoDaoProvider {
 
   private _geraChave(agendamento: Agendamento) {
     return agendamento.emailCliente + agendamento.data.substr(0, 10);
-
   }
 
   salva(agendamento: Agendamento) {
     let chave = this._geraChave(agendamento);
     let promise = this._storage.set(chave, agendamento);
+
+    return Observable.fromPromise(promise);
+  }
+
+  recupera(agendamentoId) {
+    let promise = this._storage.get(agendamentoId);
 
     return Observable.fromPromise(promise);
   }

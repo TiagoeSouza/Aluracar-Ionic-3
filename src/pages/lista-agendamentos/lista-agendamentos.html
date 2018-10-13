@@ -6,16 +6,34 @@
 
 </ion-header>
 
-
+<!-- 
 <ion-content padding>
   <ion-list>
     <ion-item [class.falha]="!agendamento.enviado" *ngFor="let agendamento of agendamentos">
-      {{agendamento.nomeCliente}} - {{agendamento.modeloCarro}}
-
-      <button ion-button item-end icon-only clear 
-      *ngIf="!agendamento.enviado" (click)="reenvia(agendamento)" >
+      {{agendamento.nomeCliente}} - {{agendamento.data | date:'dd/MM/yyyy'}}
+      <p> {{agendamento.modeloCarro}} - R$: {{agendamento.precoTotal}} </p>
+      <ion-badge item-end *ngIf="agendamento.confirmado && !agendamento.visualizado">Confirmado!</ion-badge>
+      <button ion-button item-end icon-only clear *ngIf="!agendamento.enviado" (click)="reenvia(agendamento)">
         <ion-icon name="refresh"></ion-icon>
       </button>
     </ion-item>
+  </ion-list>
+</ion-content> -->
+
+<ion-content>
+  <ion-list>
+    <ion-card [class.falha]="!agendamento.enviado" *ngFor="let agendamento of agendamentos">
+      <ion-item [class.falha]="!agendamento.enviado">
+        <ion-avatar item-start>
+          <img src="assets/img/avatar-padrao.jpg">
+        </ion-avatar>
+        {{agendamento.nomeCliente}} - {{agendamento.data | date:'dd/MM/yyyy'}}
+        <p> {{agendamento.modeloCarro}} - R$: {{agendamento.precoTotal}} </p>
+        <ion-badge item-end *ngIf="agendamento.confirmado && !agendamento.visualizado">Confirmado!</ion-badge>
+        <button ion-button item-end icon-only clear *ngIf="!agendamento.enviado" (click)="reenvia(agendamento)">
+          <ion-icon name="refresh"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-card>
   </ion-list>
 </ion-content>
