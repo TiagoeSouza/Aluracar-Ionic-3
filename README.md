@@ -1,6 +1,6 @@
 ## *Projetos de estudos utilizando a plataforma Alura*
 
-1-) Projeto Aluracar: Referente ao (Curso Ionic 3 parte 1: aplicações híbridas mobile ainda mais poderosas) - *Finalizado*
+## 1-) Projeto Aluracar: Referente ao (Curso Ionic 3 parte 1: aplicações híbridas mobile ainda mais poderosas) - *Finalizado*
 
      ° Consumindo a API do cliente
      ° Lidando com ações do usuário no aplicativo
@@ -25,7 +25,7 @@
   </table>
 
 
-2-) Projeto Aluracar: Referente ao (Curso Ionic 3 parte 2: Recursos e build nativos) - *Finalizado*
+## 2-) Projeto Aluracar: Referente ao (Curso Ionic 3 parte 2: Recursos e build nativos) - *Finalizado*
 
      ° A página de agendamentos
      ° Criando o menu da aplicação
