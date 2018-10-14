@@ -67,17 +67,17 @@ module.exports = app => {
         const agendamentoId = agendamento.emailCliente + agendamento.data.substr(0, 10);
 
         const message = { 
-            app_id: "de4fb57a-4a3c-4e97-bc62-e66bba9cfe82", //"e53f5d24-40e4-458f-99db-5230cf3f8bc0",
+            app_id: "de4fb57a-4a3c-4e97-bc62-e66bba9cfe82D", //"e53f5d24-40e4-458f-99db-5230cf3f8bc0",
             headings: {"en": "Aluracar"},
             contents: {"en": "Agendamento confirmado!"},
             data: {"agendamento-id": agendamentoId},
             included_segments: ["All"],
-			send_after:new Date(new Date().setMinutes(10)).toUTCString()
+			      send_after:new Date(new Date().setMinutes(10)).toUTCString()
         };
 
         const headers = {
             "Content-Type": "application/json; charset=utf-8",
-            "Authorization": "Basic ZmU0Mzg0ZTMtYWIzYS00OWY3LTk1MmEtZWIzZDM2ODM4ZmI5" //"Basic ZmU0Mzg0ZTMtYWIzYS00OWY3LTk1MmEtZWIzZDM2ODM4ZmI5" //"Basic MGJlOGMxZGEtMDY3Ni00NWY3LWI0ZjYtMjRjMjYzMzhmZmEz"
+            "Authorization": "Basic ZmU0Mzg0ZTMtYWIzYS00OWY3LTk1MmEtZWIzZDM2ODM4ZmI5D" //"Basic ZmU0Mzg0ZTMtYWIzYS00OWY3LTk1MmEtZWIzZDM2ODM4ZmI5" //"Basic MGJlOGMxZGEtMDY3Ni00NWY3LWI0ZjYtMjRjMjYzMzhmZmEz"
         };
         
         const options = {
